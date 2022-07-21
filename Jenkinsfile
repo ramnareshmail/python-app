@@ -1,5 +1,9 @@
 pipeline { 
-    agent any 
+    agent { 
+        docker { 
+            image 'python:3.10.1-alpine' 
+            }
+        } 
     stages { 
         stage ('Build') { 
                 steps { 
@@ -7,9 +11,11 @@ pipeline {
                 }
         }
         stage ('Test') { 
-                steps { 
-                    echo 'Running test phase. ' 
+          steps { 
+                    echo 
+                    'Running test phase. ' 
                 }
+            
         }
     }           
  }
