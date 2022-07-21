@@ -4,7 +4,8 @@ pipeline {
     agent none
     stages {
         stage('Build') {
-            agent {
+            agent any
+            {
                 docker {
                     //This image parameter (of the agent section’s docker parameter) downloads the python:2-alpine
                     //Docker image and runs this image as a separate container. The Python container becomes
